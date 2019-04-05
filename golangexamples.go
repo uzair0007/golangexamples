@@ -1,15 +1,36 @@
 // Package "golangexamples" contains GO Examples
-//package golangexamples
-package main
+package golangexamples
 
+
+//Importing Essential Libraries
 import (
-    "fmt"
     "strings"
 	"github.com/ehteshamz/greetings"
 )
 
+
 // GoLangString is a global variable
-//var GoLangSlice []byte = := []byte{'H', 'E', 'L', 'L', 'O', ' ', 'F', 'R', 'I', 'E', 'N', 'D', 'S', '!'}
+var GoLangString = "Hello World!"
+
+
+// Converts the String to Slice([]byte)
+func String2Slice(str string) []byte {
+	
+	// Length of the Slice
+	var length = len(str)
+	
+	// Slice to Return
+	slice := make([]byte, length)
+	
+	// Loop to Convert the String to Slice
+	for i := 0; i < length; i++ {
+		slice[i] = str[i]
+	}
+	
+	// Return the String
+	return slice
+}
+
 
 // Returns the contents of the slice concatenated together and separated by a dash (-).
 func ConcatSlice(sliceToConcat []byte) string {
@@ -85,22 +106,8 @@ func Encrypt(sliceToEncrypt []byte, ceaserCount int) string {
 	return s
 }
 
+
 // Invokes the "greetings" package and returns the resulting string.
 func EZGreetings(name string) string {
 	return greetings.PrintGreetings(name)
-}
-
-
-func main() {
-	stc := []byte{'F', 'R', 'I', 'E', 'N', 'D', 'S', '!'}
-	fmt.Println(ConcatSlice(stc))
-	
-	//var s = "wkh dgydgfh zloo ehjlq dw wkuhh sp"
-	//Text: If he had anything confidential to say.
-	//Cipher: jg if ibe bozuijoh dpogjefoujbm up tbz.
-	msg := []byte{'i', 'f', '@', 'h', 'e', '*', 'h', 'a', 'd', '-', 'a', 'n', 'y', 't', 'h', 'i', 'n', 'g', ' ', 'c', 'o', 'n', 'f', 'i', 'd', 'e', 'n', 't', 'i', 'a', 'l', ' ', 't', 'o', ' ', 's', 'a', 'y', '.'}
-	fmt.Println(Encrypt(msg, 3))
-	
-	fmt.Println(EZGreetings("EZ"))
-	
 }
