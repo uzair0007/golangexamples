@@ -1,3 +1,3 @@
-# hello-go
+# golangexamples
 Learning Go Programming Language
-Basic Hello World Program in GO
+Assignment 3: Basic GO Programming Language Examples
